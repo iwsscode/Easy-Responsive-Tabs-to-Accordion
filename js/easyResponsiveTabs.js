@@ -26,12 +26,14 @@
             this.each(function () {
                 var $respTabs = $(this);
                 var $respTabsList = $respTabs.find('ul.resp-tabs-list');
+                var $respTabsContainer = $respTabs.find('.resp-tabs-container');
                 $respTabs.find('ul.resp-tabs-list li').addClass('resp-tab-item');
                 $respTabs.css({
                     'display': 'block',
                     'width': jwidth
                 });
-
+                
+                $respTabsContainer.find('> div').addClass('resp-tab-content');
                 $respTabs.find('.resp-tabs-container > div').addClass('resp-tab-content');
                 jtab_options();
                 //Properties Function
@@ -118,6 +120,8 @@
                         $respTabs.find('.resp-accordion-closed').removeAttr('style');
                     });
                 });
+                
+                $respTabsContainer.removeClass('resp-tabs-init');
             });
         }
     });
